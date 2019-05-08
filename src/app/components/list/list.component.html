@@ -1,0 +1,23 @@
+<ActionBar title="Lists">
+    <ActionItem text="ITEMS" [nsRouterLink]="['/items']" ios.position = "right" ></ActionItem>
+  </ActionBar>
+<GridLayout>
+<ListView [items]="everybody" (itemTap)="onItemTap($event)" class="list-group">
+        <ng-template let-person="item" let-i="index" let-odd="odd" let-even="even">
+            <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+            <StackLayout orientation="horizontal" class="list-group-item">
+                <Label [text]="person.name"></Label>
+            </StackLayout>
+        </ng-template>
+        <StackLayout>
+                <Label text="Tap the button" class = "title"></Label>
+                
+                <Button [nsRouterLink]="['/Create']" text="CREATE" ></Button>
+                
+                <Label [text] = "message" class = "message" textWrap = "true"></Label>
+        </StackLayout>
+</ListView>
+
+</GridLayout>
+
+  

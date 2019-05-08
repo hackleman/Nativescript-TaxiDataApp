@@ -1,0 +1,19 @@
+<ActionBar title="Login"></ActionBar>
+
+
+<FlexboxLayout>
+  <StackLayout class="form">
+    <Image src="~/app/assets/img/favicon.png"></Image>
+
+      <TextField hint="Email Address" keyboardType="email"
+      autocorrect="false" autocapitalizationType="none"
+      [(ngModel)]="email" class="input input-border"></TextField>
+    <TextField hint="Password" secure="true"
+      class="input input-border"></TextField>
+
+    <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'"
+      class="btn btn-primary" (tap)="submit()"></Button>
+    <Button [text]="isLoggingIn ? 'Sign up for Taxidata.co' : 'Back to login'"
+      (tap)="toggleDisplay()"></Button>
+  </StackLayout>
+</FlexboxLayout>

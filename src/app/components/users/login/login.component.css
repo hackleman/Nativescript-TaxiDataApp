@@ -1,10 +1,10 @@
 FlexboxLayout {
     justify-content: center;
     align-items: center;
-    background-image: url('res://image3');
+    background-image: url('res://image1');
     background-size: cover;
   }
-  
+
   StackLayout {
     width: 300;
     padding: 10 16;

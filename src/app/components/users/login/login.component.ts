@@ -1,36 +1,29 @@
-import { Component, OnInit } from "@angular/core";
-import { Location } from '@angular/common';
-import * as ApplicationSettings from "tns-core-modules/application-settings";
-
+import { Component } from "@angular/core";
+import { Router } from '@angular/router';
+import { User } from '../../../shared/user/user';
+import { UserService } from '../../../shared/user/user.service';
 
 @Component({
-  selector: "login",
-  moduleId: module.id,
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+    selector: "gr-main",
+    providers: [],
+    templateUrl: 'app/components/users/login/login.component.html',
+    styleUrls: ['app/components/users/login/css/login.component.css', 'app/components/users/login/css/login.css']
 })
+export class LoginComponent {
 
-export class LoginComponent implements OnInit {
+    public email = 'hackleman.jason@gmail.com';
+    public isLoggingIn = true;
+    public user: User;
 
-  email: any;
-  isLoggingIn = true;
+    constructor( ) {
+        this.user = new User();
+    }
+    
+    public submit() {
+        alert('You\'re using: ' + this.email);
+    }
 
-  constructor(  ) {
-  }
-
-ngOnInit(): void {
-  this.email = "nativescriptrocks@progress.com";
-}
-
-  submit() {
-    alert("You’re using: " + this.email);
-  }
-
-  toggleDisplay() {
-    this.isLoggingIn = !this.isLoggingIn;
-  }
-
-
-
-
+    public toggleDisplay() {
+        this.isLoggingIn = !this.isLoggingIn;
+    }
 }
